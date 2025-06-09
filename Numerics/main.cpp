@@ -43,8 +43,6 @@ void main()
 		default: hex[counter++] = remainder + '0'; break;
 		}
 		n1 /= 16;
-	}
-
 
 	cout << "Число в шестнадцатеричной системе: ";
 	for (int i = (counter - 1); i >= 0; i--)
@@ -53,3 +51,26 @@ void main()
 	}
 	cout << endl;
 }
+		/*Старый вариант, выводит в обратном порядке
+
+		while (n != 0)
+		{
+			int remainder = n % 16;
+			char symbol = ' ';
+			switch (remainder)
+			{
+			case 10: symbol = 'A'; cout << symbol; break;
+			case 11: symbol = 'B'; cout << symbol; break;
+			case 12: symbol = 'C'; cout << symbol; break;
+			case 13: symbol = 'D'; cout << symbol; break;
+			case 14: symbol = 'E'; cout << symbol; break;
+			case 15: symbol = 'F'; cout << symbol; break;
+			default:
+				cout << remainder;
+				break;
+			}
+			counter *= 10;
+			n /= 16;
+			}
+		cout << result;
+		}*/
