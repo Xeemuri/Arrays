@@ -4,7 +4,7 @@ using namespace std;
 void main()
 {
 	setlocale(LC_ALL, "Russian");
-	const int SIZE = 10;
+	const int SIZE = 5;
 	int arr[SIZE];
 
 	/*arr[2] = 1024;
@@ -68,14 +68,12 @@ void main()
 	{
 		for (int j = i+1; j < SIZE; j++)
 		{
-			int imin = i;
-			if (arr[j] < arr[imin])
+			if (arr[j] < arr[i])
 			{
-				imin = j;
+				int buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
 			}
-			int holder = arr[i];
-			arr[i] = arr[imin];
-			arr[imin] = holder;
 
 		}
 	}

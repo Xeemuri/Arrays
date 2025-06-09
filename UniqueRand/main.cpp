@@ -6,15 +6,30 @@ void main()
 	setlocale(LC_ALL, "");
 	int minRand = 20;
 	int maxRand = 30;
-	const int SIZE = 10;
+	const int SIZE = 20;
 	int arr[SIZE];
 
 	for (int i = 0; i < SIZE; i++)
 	{
-		arr[i] = rand() % (maxRand - minRand) + minRand;
+		bool unique;
+
+		do
+		{
+			arr[i] = rand() % SIZE;
+			unique = true;
+			for (int j = 0; j < i; j++)
+			{
+				if (arr[i] == arr[j])
+				{
+					unique = false;
+					break;
+				}
+			}
+		} while (!unique);
+		
 	}
 
-	for (int i = (SIZE - 1); i >= 0; i--)
+	for (int i = 0; i < SIZE; i++)
 	{
 		cout << arr[i] << "\t";
 	}
