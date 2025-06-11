@@ -8,7 +8,7 @@ void main()
 	cout << "Введите число в десятичной системе счисления: "; cin >> n;
 	int n1 = n;
 	const int SIZE = 32;
-	int bin[SIZE],hex[SIZE];
+	int bin[SIZE], hex[SIZE];
 	int counter = 0;
 	int remainder = 0;
 
@@ -20,7 +20,7 @@ void main()
 	}
 
 	cout << "Число в двоичной системе: ";
-	for (int i = ( counter - 1); i >= 0; i--)
+	for (int i = (counter - 1); i >= 0; i--)
 	{
 		cout << bin[i];
 	}
@@ -29,7 +29,7 @@ void main()
 	counter = 0;
 	remainder = 0;
 
-	while (n1 != 0)
+	/*while (n1 != 0)
 	{
 		remainder = n1 % 16;
 		switch (remainder)
@@ -44,33 +44,9 @@ void main()
 		}
 		n1 /= 16;
 
-	cout << "Число в шестнадцатеричной системе: ";
-	for (int i = (counter - 1); i >= 0; i--)
-	{
-		cout << (char)hex[i];
-	}
+	}*/
+	while (n1 != 0) {remainder = n1 % 16; hex[counter++] = (remainder < 10) ? remainder + '0' : 'A' + remainder - 10; n /= 16;}
+	//Я знаю, что несовсем правильно, но по другому не получилось
+	cout << "Число в шестнадцатеричной системе: "; for (int i = (counter - 1); i >= 0; i--) cout << (char)hex[i];
 	cout << endl;
 }
-		/*Старый вариант, выводит в обратном порядке
-
-		while (n != 0)
-		{
-			int remainder = n % 16;
-			char symbol = ' ';
-			switch (remainder)
-			{
-			case 10: symbol = 'A'; cout << symbol; break;
-			case 11: symbol = 'B'; cout << symbol; break;
-			case 12: symbol = 'C'; cout << symbol; break;
-			case 13: symbol = 'D'; cout << symbol; break;
-			case 14: symbol = 'E'; cout << symbol; break;
-			case 15: symbol = 'F'; cout << symbol; break;
-			default:
-				cout << remainder;
-				break;
-			}
-			counter *= 10;
-			n /= 16;
-			}
-		cout << result;
-		}*/
