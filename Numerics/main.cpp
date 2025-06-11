@@ -2,6 +2,7 @@
 using namespace std;
 
 //#define BINARY
+#define HEXADECIMAL
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -26,6 +27,7 @@ void main()
 	cout << endl;
 #endif // BINARY
 
+#ifdef HEXADECIMAL
 	const int  MAX_HEX_CAPACITY = 8;
 	char hex[MAX_HEX_CAPACITY] = {};
 
@@ -37,6 +39,8 @@ void main()
 	}
 	for (--i; i > 0; i--)cout << hex[i];
 	cout << endl;
+#endif // HEXADECIMAL
+
 
 	/*while (n1 != 0)
 	{
