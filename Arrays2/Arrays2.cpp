@@ -36,4 +36,6 @@ void main()
     }
     cout <<"Сумма элементов массива: " << sum << endl;
     cout << "Среднее-арифметическое: " << (double)sum / ROWS / COLS << endl;
+
+
 }
